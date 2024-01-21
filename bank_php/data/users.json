@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1829,
+        "name": "Adelė",
+        "lastname": "Jonė",
+        "number": "LT219353270996078680",
+        "personalCode": "48705555555",
+        "balance": 700
+    },
+    {
+        "id": 8403,
+        "name": "Linas",
+        "lastname": "Linauskas",
+        "number": "LT199218049652822463",
+        "personalCode": "36905236699",
+        "balance": 900
+    },
+    {
+        "id": 8254,
+        "name": "Onytė",
+        "lastname": "Janulytė",
+        "number": "LT445289505034309907",
+        "personalCode": "44102290312",
+        "balance": 1000
+    },
+    {
+        "id": 8935,
+        "name": "Ona",
+        "lastname": "Jonaitiene",
+        "number": "LT261698539024739462",
+        "personalCode": "49902158974",
+        "balance": 300
+    },
+    {
+        "id": 9334,
+        "name": "Petras",
+        "lastname": "Onaitis",
+        "number": "LT977534593671087660",
+        "personalCode": "38705555555",
+        "balance": 1000
+    },
+    {
+        "id": 8231,
+        "name": "Rytė",
+        "lastname": "Vakarytė",
+        "number": "LT460369728731981188",
+        "personalCode": "60312036548",
+        "balance": 1000
+    }
+]

@@ -1,0 +1,70 @@
+<?php
+echo "seeder started\n";
+$users = [
+    [
+        "id" => rand(1000, 9999),
+        "name" => "Antanas",
+        "lastname" => "Jonaitis",
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => "39305311112",
+        "balance" => 16,
+    ],
+    [
+        "id" => rand(1000, 9999),
+        "name" => "Petras",
+        "lastname" => "Antaninis",
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => "39705322222",
+        "balance" => 516,
+    ],
+    [
+        "id" => rand(1000, 9999),
+        "name" => "Jonas",
+        "lastname" => "Petrainis",
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => "39005333333",
+        "balance" => 432.5,
+    ],
+    [
+        "id" => rand(1000, 9999),
+        "name" => "Jonas",
+        "lastname" => "Jonaitis",
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => "38205344444",
+        "balance" => 200000100,
+    ],
+    [
+        "id" => rand(1000, 9999),
+        "name" => "Petras",
+        "lastname" => "Petrinis",
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => "38705555555",
+        "balance" => 53218,
+    ],
+    [
+        "id" => rand(1000, 9999),
+        "name" => "Ona",
+        "lastname" => "Jonaitiene",
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => "48705555555",
+        "balance" => 1000,
+    ],
+
+];
+$users = [];
+
+for ($i = 0; $i < 20; $i++) {
+    $users[] = [
+        "id" => rand(1000, 9999),
+        "name" => [],
+        "lastname" => [],
+        "number" => "LT" .rand(100000000000000000, 999999999999999999),
+        "personalCode" => rand(10000000000, 99999999999),
+        "balance" => rand(0, 9999),
+        
+    ];
+}
+file_put_contents(__DIR__ . '/../data/users.json', json_encode($users, JSON_PRETTY_PRINT));
+
+
+echo "seeder finished\n";
