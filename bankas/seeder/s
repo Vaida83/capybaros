@@ -5,13 +5,13 @@ echo "seeder started\n";
 $users = [
    (object) [
         'name' => 'Admin',
-        'email' => 'admin@gmail.com',
-        'password' => sha1('123'),
+        'email' => 'admin@admin.com',
+        'password' => ('123'),
     ],
     (object) [
-        'name' => 'Adam',
-        'email' => 'adam@gmail.com',
-        'password' => sha1('123'),
+        'name' => 'Anele',
+        'email' => 'anele@gmail.com',
+        'password' => ('123'),
     ]
 ];
 file_put_contents(__DIR__.'/../data/users.json', json_encode($users));
