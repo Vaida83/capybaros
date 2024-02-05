@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Bankas\App\Controllers;
 
-use App\App;
-use App\Message;
-use App\DB\FileBase;
-use App\Request\AccountUpdateRequest;
+use Bankas\App\App;
+use Bankas\App\Message;
+use Bankas\App\DB\FileBase;
+use Bankas\App\Request\AccountUpdateRequest;
 //use App\Request\AccountUpdateWithdrawRequest;
 //use App\Request\NewAccountRequest;
 

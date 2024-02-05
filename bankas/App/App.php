@@ -3,13 +3,15 @@ namespace Bankas\App;
 use Bankas\App\Controllers\HomeController;
 use Bankas\App\Controllers\AddAccountController;
 use Bankas\App\Controllers\LoginController;
-
+//use Bankas\App\Message;
+//use Bankas\App\Auth;
 
 class App {
 
     public static function run()
     {
         $server = $_SERVER['REQUEST_URI'];
+//$server = str_replace('/bankas/public/', '', $server);
         $server = preg_replace('/\?.*$/', '', $server);
         $url = explode('/', $server); 
         array_shift($url);

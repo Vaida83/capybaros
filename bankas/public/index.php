@@ -5,6 +5,7 @@ use Bankas\App\Message;
 use Bankas\App\Auth;
 session_start();
 
+define('DB', 'maria');
  
 require '../vendor/autoload.php';
 

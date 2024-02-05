@@ -1,4 +1,4 @@
-<h2 style="text-align: center; margin-bottom: 50px;">Registruokites Banke</h2>
+<h2 style="text-align: center; margin-bottom: 50px;">Registruokitės Banke</h2>
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <form action="" method="post">
             <div class="form-group">

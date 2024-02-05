@@ -4,7 +4,9 @@
     <div class="row justify-content-center">
         <div class="col-5">
             <div class="card mt-4">
+                <!-- <form action="<?= URL ?>/addAccount/updateWithdraw/<?= $members->id ?>" method="post"> -->
                 <form action="<?= URL ?>/addAccount/update/<?= $members->id ?>" method="post">
+
                     <div class="card-header">
                         <h3 style="text-align:center">Nuskaityti pinigus</h3>
                     </div>
@@ -15,6 +17,7 @@
                                 <p> <b>Name: </b> <?= $members->name ?> </p>
                                 <p> <b>Last Name: </b> <?= $members->lastname ?> </p>
                                 <p> <b> Balance: </b> <?= number_format($members->balance, 2, '.', '')  ?> €.</p>
+                                <!-- <input type="text" name="withdraw" required> -->
                                 <input type="text" name="withdraw" required>
                             </div>
                         </div>

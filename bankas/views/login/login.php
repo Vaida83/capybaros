@@ -1,4 +1,5 @@
-
+<?php 
+require ROOT . 'views/nav.php' ?>
 <h2 style="text-align: left; margin-bottom: 50px;"> Prašome prisijungti </h2>
     <div style="display: left; flex-direction: column; align-items:center; justify-content: center;">
         <form action="<?= URL ?>/login" method="post">

@@ -10,7 +10,10 @@ class HomeController
     public function index()
     {
         
-        return App::view('home');
+        return App::view('home', [
+            'title' => "Minutės bankas"
+        ]);
+        
     }
  
 }

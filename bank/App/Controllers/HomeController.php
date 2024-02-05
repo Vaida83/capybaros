@@ -1,8 +1,8 @@
 <?php
-//gana esminis dalykas
-namespace App\Controllers;
 
-use App\App;
+namespace Bankas\App\Controllers;
+
+use Bankas\App\App;
 
 
 class HomeController

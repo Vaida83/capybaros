@@ -5,6 +5,7 @@ namespace Bankas\App\Controllers;
 use Bankas\App\App;
 use Bankas\App\Message;
 use Bankas\App\DB\FileBase;
+use Bankas\App\DB\MariaBase;
 use Bankas\App\Request\AccountUpdateRequest;
 use Bankas\App\Request\NewAccountRequest;
 
@@ -14,7 +15,12 @@ class AddAccountController
     public function index($request)
     {
 
-        $writer = new FileBase('members'); 
+        //$writer = new FileBase('members'); 
+       
+        $writer = match (DB) {
+            'file' => new FileBase('members'),
+            'maria' => new MariaBase('accounts'),
+        };
         $members = $writer->showAll();
 
         $sort = $request['sort'] ?? null;
@@ -50,7 +56,7 @@ class AddAccountController
     public function create()
     {
         return App::view('addAccount/create', [
-            'title' => 'Create new account',
+            'title' => 'Sukurti naują sąskaitą',
         ]);
     }
 
@@ -60,18 +66,24 @@ class AddAccountController
         $lastname =  $request['lastname'] ?? null;
         $PC =  $request['PC'] ?? null;
         $AC =  $request['AC'] ?? null;
+        $balance = $request['balance'] ?? null;
 
         if (!NewAccountRequest::validate($request)) {
             return App::redirect("addAccount/create");
         }
 
-        $writer = new FileBase('members');
+        //$writer = new FileBase('members');
+        
+        $writer = match (DB) {
+            'file' => new FileBase('members'),
+            'maria' => new MariaBase('accounts'),
+        };
 
         $members = $writer->showAll();
 
         foreach ($members as $member) {
             if ($PC == $member->PC) {
-                Message::get()->Set('danger', 'Member with this personal code already exists');
+                Message::get()->Set('danger', 'Asmuo su tokiu asmens kodu jau yra');
                 return App::redirect('addAccount/create');
             }
         }
@@ -84,7 +96,7 @@ class AddAccountController
             'balance' => 0,
         ]);
 
-        Message::get()->Set('success', 'Account was created');
+        Message::get()->Set('success', 'Sąskaita sukurta');
 
         return App::redirect('addAccount');
     }
@@ -93,7 +105,7 @@ class AddAccountController
     public function confirmDelete($id)
     {
         return App::view('addAccount/confirmDelete', [
-            'title' => 'Confirm Delete',
+            'title' => 'Patvirtinti ištrynimą',
             'id' => $id
         ]);
     }
@@ -101,7 +113,11 @@ class AddAccountController
     public function destroy($id, $request)
     {
 
-        $writer = new FileBase('members');
+        //$writer = new FileBase('members');
+        $writer = match (DB) {
+            'file' => new FileBase('members'),
+            'maria' => new MariaBase('accounts'),
+        };
         $request = $writer->show($id);
         if ($request->balance == 0) {
             $writer->delete($id);
@@ -116,7 +132,11 @@ class AddAccountController
     public function edit($id)
     {
 
-        $writer = new FileBase('members');
+        //$writer = new FileBase('members');
+        $writer = match (DB) {
+            'file' => new FileBase('members'),
+            'maria' => new MariaBase('accounts'),
+        };
         $members = $writer->show($id);
         return App::view('addAccount/edit', [
             'title' => 'Edit account',
@@ -127,7 +147,11 @@ class AddAccountController
     public function update($id, $request)
     {
 
-        $writer = new FileBase('members');
+        //$writer = new FileBase('members');
+        $writer = match (DB) {
+            'file' => new FileBase('members'),
+            'maria' => new MariaBase('accounts'),
+        };
         $userData = $writer->show($id);
 
         if (!AccountUpdateRequest::validate($request, $userData)) {
@@ -159,7 +183,12 @@ class AddAccountController
     }
     public function withdraw($id)
     {
-        $writer = new FileBase('members');
+        //$writer = new FileBase('members');
+        $writer = match (DB) {
+            'file' => new FileBase('members'),
+            'maria' => new MariaBase('accounts'),
+        };
+
         $members = $writer->show($id);
 
         return App::view('addAccount/withdraw', [

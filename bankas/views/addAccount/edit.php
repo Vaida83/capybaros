@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-3">
+        <div class="col-5">
             <div class="card mt-4">
                 <form action="<?= URL ?>/addAccount/update/<?= $members->id ?>" method="post">
                     <div class="card-header">

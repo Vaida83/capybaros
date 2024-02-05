@@ -20,16 +20,16 @@ class LoginController{
 
       
         if(Auth::get()->tryLoginUser($email, $password)){
-            Message::get()->set('success', 'You are logged in');
+            Message::get()->set('success', 'Jūs sėkmingai prisijungėte!');
             return App::redirect('addAccount');
         }
     
-        Message::get()->set('danger', 'Wrong email or password');
+        Message::get()->set('danger', 'Blogas el.paštas arba slaptažodis');
         return App::redirect('login');
     }
     public function logout() {
         Auth::get()->logout();
-        Message::get()->set('success', 'You are logged out');
+        Message::get()->set('success', 'Jūs sėkmingai išsiregistravote!');
         return App::redirect('login');
     }
 }
